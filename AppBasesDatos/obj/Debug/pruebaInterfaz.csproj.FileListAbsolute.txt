@@ -1,0 +1,12 @@
+C:\Users\hdavi\Desktop\pruebaInterfaz\bin\Debug\pruebaInterfaz.exe.config
+C:\Users\hdavi\Desktop\pruebaInterfaz\bin\Debug\pruebaInterfaz.exe
+C:\Users\hdavi\Desktop\pruebaInterfaz\bin\Debug\pruebaInterfaz.pdb
+C:\Users\hdavi\Desktop\pruebaInterfaz\obj\Debug\pruebaInterfaz.csprojAssemblyReference.cache
+C:\Users\hdavi\Desktop\pruebaInterfaz\obj\Debug\pruebaInterfaz.Properties.Resources.resources
+C:\Users\hdavi\Desktop\pruebaInterfaz\obj\Debug\pruebaInterfaz.csproj.GenerateResource.cache
+C:\Users\hdavi\Desktop\pruebaInterfaz\obj\Debug\pruebaInterfaz.exe
+C:\Users\hdavi\Desktop\pruebaInterfaz\obj\Debug\pruebaInterfaz.pdb
+C:\Users\hdavi\Desktop\pruebaInterfaz\obj\Debug\pruebaInterfaz.Inicio.resources
+C:\Users\hdavi\Desktop\pruebaInterfaz\obj\Debug\pruebaInterfaz.InsertarCliente.resources
+C:\Users\hdavi\Desktop\pruebaInterfaz\obj\Debug\pruebaInterfaz.ListarClientes.resources
+C:\Users\hdavi\Desktop\pruebaInterfaz\obj\Debug\pruebaInterfaz.ModificarCliente.resources

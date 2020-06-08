@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{517D0204-561F-4388-954F-661851D4F877}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>pruebaInterfaz</RootNamespace>
+    <AssemblyName>pruebaInterfaz</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActivarCliente.Designer.cs">
+      <DependentUpon>ActivarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActualizarPrecios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActualizarPrecios.Designer.cs">
+      <DependentUpon>ActualizarPrecios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AsociarAuto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsociarAuto.Designer.cs">
+      <DependentUpon>AsociarAuto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AsociarOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsociarOrden.Designer.cs">
+      <DependentUpon>AsociarOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AsociarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsociarProveedor.Designer.cs">
+      <DependentUpon>AsociarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BorrarParte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BorrarParte.Designer.cs">
+      <DependentUpon>BorrarParte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsertarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertarCliente.Designer.cs">
+      <DependentUpon>InsertarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsertarOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertarOrden.Designer.cs">
+      <DependentUpon>InsertarOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsertarOrganizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertarOrganizacion.Designer.cs">
+      <DependentUpon>InsertarOrganizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsertarParte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertarParte.Designer.cs">
+      <DependentUpon>InsertarParte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarClientes.Designer.cs">
+      <DependentUpon>ListarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListarOrganizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarOrganizacion.Designer.cs">
+      <DependentUpon>ListarOrganizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListarPartesAuto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarPartesAuto.Designer.cs">
+      <DependentUpon>ListarPartesAuto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalizarProveedor.Designer.cs">
+      <DependentUpon>LocalizarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarCliente.Designer.cs">
+      <DependentUpon>ModificarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarOrganizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarOrganizacion.Designer.cs">
+      <DependentUpon>ModificarOrganizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SuspenderCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuspenderCliente.Designer.cs">
+      <DependentUpon>SuspenderCliente.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ActivarCliente.resx">
+      <DependentUpon>ActivarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActualizarPrecios.resx">
+      <DependentUpon>ActualizarPrecios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AsociarAuto.resx">
+      <DependentUpon>AsociarAuto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AsociarOrden.resx">
+      <DependentUpon>AsociarOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AsociarProveedor.resx">
+      <DependentUpon>AsociarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BorrarParte.resx">
+      <DependentUpon>BorrarParte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertarCliente.resx">
+      <DependentUpon>InsertarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertarOrden.resx">
+      <DependentUpon>InsertarOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertarOrganizacion.resx">
+      <DependentUpon>InsertarOrganizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertarParte.resx">
+      <DependentUpon>InsertarParte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListarClientes.resx">
+      <DependentUpon>ListarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListarOrganizacion.resx">
+      <DependentUpon>ListarOrganizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListarPartesAuto.resx">
+      <DependentUpon>ListarPartesAuto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizarProveedor.resx">
+      <DependentUpon>LocalizarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarCliente.resx">
+      <DependentUpon>ModificarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarOrganizacion.resx">
+      <DependentUpon>ModificarOrganizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="SuspenderCliente.resx">
+      <DependentUpon>SuspenderCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
