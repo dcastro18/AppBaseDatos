@@ -13,11 +13,11 @@ namespace pruebaInterfaz
 {
     public partial class LocalizarProveedor : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=172.19.127.67\\ESTUDIANTES;Initial Catalog=VentaRepuestos;User ID=dacastro;Password=dacastro");
+        private SqlConnection con;
 
-
-        public LocalizarProveedor()
+        public LocalizarProveedor(string datosConexion)
         {
+            con = new SqlConnection(datosConexion);
             InitializeComponent();
             SqlDataAdapter sta = new SqlDataAdapter("SELECT * FROM Parte", con);
             DataTable dtParte = new DataTable();

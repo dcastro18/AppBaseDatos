@@ -16,8 +16,9 @@ namespace pruebaInterfaz
         SqlConnection con = new SqlConnection("Data Source=172.19.127.67\\ESTUDIANTES;Initial Catalog=VentaRepuestos;User ID=dacastro;Password=dacastro");
         DataTable dtParte = new DataTable();
 
-        public BorrarParte()
+        public BorrarParte(string datosConexion)
         {
+            con = new SqlConnection(datosConexion);
             InitializeComponent();
 
             SqlDataAdapter sta = new SqlDataAdapter("SELECT * FROM Parte", con);
@@ -59,7 +60,7 @@ namespace pruebaInterfaz
             }
             else
             {
-                MessageBox.Show("No se ha podido eliminar pues esta en una orden");
+                MessageBox.Show("No se ha podido eliminar pues esta en una orden.");
 
             }
 

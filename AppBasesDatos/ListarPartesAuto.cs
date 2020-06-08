@@ -13,10 +13,12 @@ namespace pruebaInterfaz
 {
     public partial class ListarPartesAuto : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=172.19.127.67\\ESTUDIANTES;Initial Catalog=VentaRepuestos;User ID=dacastro;Password=dacastro");
+        private SqlConnection con;
 
-        public ListarPartesAuto()
+        public ListarPartesAuto(string datosConexion)
         {
+            con = new SqlConnection(datosConexion);
+
             InitializeComponent();
 
             SqlDataAdapter sta = new SqlDataAdapter("SELECT * FROM Automovil", con);

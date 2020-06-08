@@ -13,10 +13,11 @@ namespace pruebaInterfaz
 {
     public partial class ActualizarPrecios : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=172.19.127.67\\ESTUDIANTES;Initial Catalog=VentaRepuestos;User ID=dacastro;Password=dacastro");
+        private SqlConnection con;
 
-        public ActualizarPrecios()
+        public ActualizarPrecios(string datosConexion)
         {
+            con = new SqlConnection(datosConexion);
             InitializeComponent();
             SqlDataAdapter sta = new SqlDataAdapter("SELECT * FROM Parte", con);
             DataTable dtParte = new DataTable();
@@ -51,6 +52,8 @@ namespace pruebaInterfaz
             }
 
             cmd.ExecuteNonQuery();
+
+            MessageBox.Show("Precios Actualizados.");
             con.Close();
 
         }

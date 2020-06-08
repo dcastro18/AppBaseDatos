@@ -1,4 +1,6 @@
-﻿namespace pruebaInterfaz
+﻿using System.Data.SqlClient;
+
+namespace pruebaInterfaz
 {
     partial class InsertarCliente
     {
@@ -176,6 +178,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "InsertarCliente";
             this.Text = "InsertarCliente";
+            this.Load += new System.EventHandler(this.InsertarCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

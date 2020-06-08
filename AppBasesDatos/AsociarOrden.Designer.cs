@@ -43,6 +43,8 @@
             this.Ordenes = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.monto = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cantidad)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,7 +110,7 @@
             // detalleOrden
             // 
             this.detalleOrden.FormattingEnabled = true;
-            this.detalleOrden.Location = new System.Drawing.Point(372, 12);
+            this.detalleOrden.Location = new System.Drawing.Point(372, 32);
             this.detalleOrden.Name = "detalleOrden";
             this.detalleOrden.Size = new System.Drawing.Size(278, 264);
             this.detalleOrden.TabIndex = 55;
@@ -181,11 +183,32 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(369, 283);
+            this.label6.Location = new System.Drawing.Point(369, 299);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 15);
+            this.label6.Size = new System.Drawing.Size(82, 15);
             this.label6.TabIndex = 62;
-            this.label6.Text = "Total:";
+            this.label6.Text = "Total con IVA:";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // monto
+            // 
+            this.monto.AutoSize = true;
+            this.monto.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monto.Location = new System.Drawing.Point(457, 299);
+            this.monto.Name = "monto";
+            this.monto.Size = new System.Drawing.Size(42, 15);
+            this.monto.TabIndex = 63;
+            this.monto.Text = "Monto";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(369, 12);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(281, 15);
+            this.label7.TabIndex = 64;
+            this.label7.Text = "Nombre - Proveedor - Cantidad - Precio Derivado";
             // 
             // AsociarOrden
             // 
@@ -193,6 +216,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(671, 336);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.monto);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Ordenes);
             this.Controls.Add(this.label5);
@@ -234,5 +259,7 @@
         private System.Windows.Forms.ComboBox Ordenes;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label monto;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -363,6 +363,7 @@
         private System.Windows.Forms.ToolStripMenuItem personasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem organizacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem activarClienteToolStripMenuItem;
+        
     }
 }
 

@@ -13,14 +13,15 @@ namespace pruebaInterfaz
 {
     public partial class AsociarOrden : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=172.19.127.67\\ESTUDIANTES;Initial Catalog=VentaRepuestos;User ID=dacastro;Password=dacastro");
+        private SqlConnection con;
         DataTable dtClientes = new DataTable();
         DataTable dtOrdenes = new DataTable();
         DataTable dtProvParte = new DataTable();
         DataTable dtParte = new DataTable();
 
-        public AsociarOrden()
+        public AsociarOrden(string datosConexion)
         {
+            con = new SqlConnection(datosConexion);
             InitializeComponent();
 
             SqlDataAdapter sta = new SqlDataAdapter("SELECT * FROM Cliente", con);
@@ -87,6 +88,20 @@ namespace pruebaInterfaz
                 detalleOrden.Items.Add(linea);
                 linea = "";
             }
+
+            cmd = new SqlCommand("SPSFactura", con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@idOrden", SqlDbType.Int).Value = idOrden;
+
+            DataTable dtMonto = new DataTable();
+
+            dtMonto.Load(cmd.ExecuteReader());
+
+            monto.Text = dtMonto.Rows[0][0].ToString();
+
+
             con.Close();
 
         }
@@ -166,24 +181,37 @@ namespace pruebaInterfaz
 
             SqlCommand cmd = new SqlCommand("SPIDetalleOrden", con);
 
-            string idOrden = (dtOrdenes.Rows[Ordenes.SelectedIndex][0]).ToString();
-            string idParte = dtParte.Rows[partes.SelectedIndex][0].ToString();
-            string idProveedor = dtProvParte.Rows[proveedores.SelectedIndex][0].ToString();
+            if(dtOrdenes.Rows.Count>0)
+            {
+                string idOrden = (dtOrdenes.Rows[Ordenes.SelectedIndex][0]).ToString();
+                string idParte = dtParte.Rows[partes.SelectedIndex][0].ToString();
+                string idProveedor = dtProvParte.Rows[proveedores.SelectedIndex][0].ToString();
 
-            cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@idParte", SqlDbType.Int).Value = idParte;
-            cmd.Parameters.AddWithValue("@idProveedor", SqlDbType.Int).Value = idProveedor;
-            cmd.Parameters.AddWithValue("@Cantidad", SqlDbType.Int).Value = cantidad.Value;
-            cmd.Parameters.AddWithValue("@idOrden", SqlDbType.Int).Value = idOrden;
+                cmd.Parameters.AddWithValue("@idParte", SqlDbType.Int).Value = idParte;
+                cmd.Parameters.AddWithValue("@idProveedor", SqlDbType.Int).Value = idProveedor;
+                cmd.Parameters.AddWithValue("@Cantidad", SqlDbType.Int).Value = cantidad.Value;
+                cmd.Parameters.AddWithValue("@idOrden", SqlDbType.Int).Value = idOrden;
 
-            cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
 
-            cantidad.Value = 0;
+                cantidad.Value = 0;
 
-            actualizarDetalles();
+                actualizarDetalles();
+            }
+            else
+            {
+                MessageBox.Show("No se pueden agregar productos, pues no hay ordenes registradas.");
+            }
+            
 
             con.Close();
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
 
         }
     }

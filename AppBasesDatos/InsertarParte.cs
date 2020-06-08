@@ -13,11 +13,12 @@ namespace pruebaInterfaz
 {
     public partial class InsertarParte : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=172.19.127.67\\ESTUDIANTES;Initial Catalog=VentaRepuestos;User ID=dacastro;Password=dacastro");
+        private SqlConnection con;
         DataTable dtMarcas = new DataTable();
         DataTable dtFabricante = new DataTable();
-        public InsertarParte()
+        public InsertarParte(string datosConexion)
         {
+            con = new SqlConnection(datosConexion);
             InitializeComponent();
 
             SqlDataAdapter sta = new SqlDataAdapter("SELECT * FROM Marca", con);

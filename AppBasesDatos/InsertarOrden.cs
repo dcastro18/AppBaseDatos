@@ -13,11 +13,12 @@ namespace pruebaInterfaz
 {
     public partial class InsertarOrden : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=172.19.127.67\\ESTUDIANTES;Initial Catalog=VentaRepuestos;User ID=dacastro;Password=dacastro");
+        private SqlConnection con;
         DataTable dtClientes = new DataTable();
 
-        public InsertarOrden()
+        public InsertarOrden(string datosConexion)
         {
+            con = new SqlConnection(datosConexion);
             InitializeComponent();
 
             SqlDataAdapter sta = new SqlDataAdapter("SELECT * FROM Cliente", con);
@@ -45,6 +46,8 @@ namespace pruebaInterfaz
             cmd.Parameters.AddWithValue("@idCliente", SqlDbType.VarChar).Value = idCliente;
             cmd.Parameters.AddWithValue("@Fecha", SqlDbType.VarChar).Value = fecha.Text;
             cmd.ExecuteNonQuery();
+
+            MessageBox.Show("Orden Registrada.");
 
             con.Close();
 

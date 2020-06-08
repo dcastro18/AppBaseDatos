@@ -13,12 +13,13 @@ namespace pruebaInterfaz
 {
     public partial class AsociarProveedor : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=172.19.127.67\\ESTUDIANTES;Initial Catalog=VentaRepuestos;User ID=dacastro;Password=dacastro");
+        private SqlConnection con;
         DataTable dtParte = new DataTable();
         DataTable dtProveedor = new DataTable();
 
-        public AsociarProveedor()
+        public AsociarProveedor(string datosConexion)
         {
+            con = new SqlConnection(datosConexion);
             InitializeComponent();
 
 

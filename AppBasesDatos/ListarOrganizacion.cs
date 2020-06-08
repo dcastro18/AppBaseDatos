@@ -13,10 +13,11 @@ namespace pruebaInterfaz
 {
     public partial class ListarOrganizacion : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=172.19.127.67\\ESTUDIANTES;Initial Catalog=VentaRepuestos;User ID=dacastro;Password=dacastro");
+        private SqlConnection con;
 
-        public ListarOrganizacion()
+        public ListarOrganizacion(string datosConexion)
         {
+            con = new SqlConnection(datosConexion);
             InitializeComponent();
             SqlDataAdapter sta = new SqlDataAdapter("exec SPSOrganizacion", con);
             DataTable dtClientes = new DataTable();

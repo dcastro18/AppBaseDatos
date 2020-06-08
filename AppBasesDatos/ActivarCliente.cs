@@ -14,10 +14,11 @@ namespace pruebaInterfaz
 {
     public partial class ActivarCliente : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=172.19.127.67\\ESTUDIANTES;Initial Catalog=VentaRepuestos;User ID=dacastro;Password=dacastro");
+        SqlConnection con;
         DataTable dtClientes = new DataTable();
-        public ActivarCliente()
+        public ActivarCliente(string datosConexion)
         {
+            con = new SqlConnection(datosConexion);
             InitializeComponent();
             SqlDataAdapter sta = new SqlDataAdapter("SELECT * FROM Cliente", con);
 

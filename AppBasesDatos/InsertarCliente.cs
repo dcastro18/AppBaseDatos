@@ -14,10 +14,10 @@ namespace pruebaInterfaz
 {
     public partial class InsertarCliente : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=172.19.127.67\\ESTUDIANTES;Initial Catalog=VentaRepuestos;User ID=dacastro;Password=dacastro");
-        
-        public InsertarCliente()
+        private SqlConnection con;
+        public InsertarCliente(string datosConexion)
         {
+            con = new SqlConnection(datosConexion);
             InitializeComponent();
 
         }
@@ -40,6 +40,11 @@ namespace pruebaInterfaz
 
             MessageBox.Show("Añadido con exito!");
             con.Close();
+
+        }
+
+        private void InsertarCliente_Load(object sender, EventArgs e)
+        {
 
         }
     }

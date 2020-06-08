@@ -14,10 +14,11 @@ namespace pruebaInterfaz
 {
     public partial class InsertarOrganizacion : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=172.19.127.67\\ESTUDIANTES;Initial Catalog=VentaRepuestos;User ID=dacastro;Password=dacastro");
+        private SqlConnection con;
 
-        public InsertarOrganizacion()
+        public InsertarOrganizacion(string datosConexion)
         {
+            con = new SqlConnection(datosConexion);
             InitializeComponent();
         }
 
