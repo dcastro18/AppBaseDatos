@@ -45,9 +45,22 @@ namespace pruebaInterfaz
 
             cmd.Parameters.AddWithValue("@idCliente", SqlDbType.VarChar).Value = idCliente;
             cmd.Parameters.AddWithValue("@Fecha", SqlDbType.VarChar).Value = fecha.Text;
-            cmd.ExecuteNonQuery();
 
-            MessageBox.Show("Orden Registrada.");
+            DataTable dtValidar = new DataTable();
+            dtValidar.Load(cmd.ExecuteReader());
+
+            if (dtValidar.Rows.Count != 0)
+            {
+                MessageBox.Show("No se ha podido crear la orden pues el cliente esta suspendido.");
+
+            }
+            else
+            {
+                MessageBox.Show("Orden registrada correctamente."); ;
+
+            }
+
+            
 
             con.Close();
 

@@ -196,9 +196,9 @@
             this.monto.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.monto.Location = new System.Drawing.Point(457, 299);
             this.monto.Name = "monto";
-            this.monto.Size = new System.Drawing.Size(42, 15);
+            this.monto.Size = new System.Drawing.Size(14, 15);
             this.monto.TabIndex = 63;
-            this.monto.Text = "Monto";
+            this.monto.Text = "0";
             // 
             // label7
             // 

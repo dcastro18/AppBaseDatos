@@ -14,6 +14,7 @@ namespace pruebaInterfaz
     public partial class ListarPartesAuto : Form
     {
         private SqlConnection con;
+        DataTable dtAuto = new DataTable();
 
         public ListarPartesAuto(string datosConexion)
         {
@@ -22,24 +23,13 @@ namespace pruebaInterfaz
             InitializeComponent();
 
             SqlDataAdapter sta = new SqlDataAdapter("SELECT * FROM Automovil", con);
-            DataTable dtAuto = new DataTable();
+            
             sta.Fill(dtAuto);
-
 
             for (int i = 0; i < dtAuto.Rows.Count; i++)
             {
-                modelo.Items.Add(dtAuto.Rows[i][1].ToString());
-
-                //listaPartes.Items.Add(anno.FindStringExact(dtAuto.Rows[i][2].ToString()));
-                
-                if (!anno.Items.Contains(dtAuto.Rows[i][2].ToString()))
-                {
-                    anno.Items.Add(dtAuto.Rows[i][2].ToString());
-                }
-               
+                modelo.Items.Add(dtAuto.Rows[i][1].ToString() + " - " + dtAuto.Rows[i][2].ToString());
             }
-
-            anno.SelectedIndex = 0;
 
             modelo.SelectedIndex = 0;
 
@@ -54,10 +44,13 @@ namespace pruebaInterfaz
 
             SqlCommand cmd = new SqlCommand("SPSPartesAutomovil", con);
 
+            string pModelo = (dtAuto.Rows[modelo.SelectedIndex][1]).ToString();
+            string anno = (dtAuto.Rows[modelo.SelectedIndex][2]).ToString();
+
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@modelo", SqlDbType.VarChar).Value = modelo.Text;
-            cmd.Parameters.AddWithValue("@anno", SqlDbType.Int).Value = anno.Text;
+            cmd.Parameters.AddWithValue("@modelo", SqlDbType.VarChar).Value = pModelo;
+            cmd.Parameters.AddWithValue("@anno", SqlDbType.Int).Value = anno;
 
             DataTable dtListaPartes = new DataTable();
             dtListaPartes.Load(cmd.ExecuteReader());

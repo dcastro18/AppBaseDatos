@@ -14,13 +14,15 @@ namespace pruebaInterfaz
     public partial class ActualizarPrecios : Form
     {
         private SqlConnection con;
+        DataTable dtParte = new DataTable();
+        DataTable dtProvParte = new DataTable();
 
         public ActualizarPrecios(string datosConexion)
         {
             con = new SqlConnection(datosConexion);
             InitializeComponent();
             SqlDataAdapter sta = new SqlDataAdapter("SELECT * FROM Parte", con);
-            DataTable dtParte = new DataTable();
+            
             sta.Fill(dtParte);
 
             for (int i = 0; i < dtParte.Rows.Count; i++)
@@ -35,8 +37,8 @@ namespace pruebaInterfaz
         {
             con.Open();
 
-            string idParte = (partes.SelectedIndex + 1).ToString();
-            string idProveedor = (proveedores.SelectedIndex + 1).ToString();
+            string idParte = dtParte.Rows[partes.SelectedIndex][0].ToString();
+            string idProveedor = dtProvParte.Rows[proveedores.SelectedIndex][0].ToString();
 
             SqlCommand cmd = new SqlCommand("SPUProveedorParte", con);
 
@@ -45,15 +47,19 @@ namespace pruebaInterfaz
             cmd.Parameters.AddWithValue("@idParte", SqlDbType.Int).Value = idParte;
             cmd.Parameters.AddWithValue("@idProveedor", SqlDbType.Int).Value = idProveedor;
             cmd.Parameters.AddWithValue("@Precio", SqlDbType.Float).Value = precio.Text;
+            
             if (ganancia.Text.Length > 0)
             {
-                int nGanacia = Int16.Parse(ganancia.Text) / 100;
-                cmd.Parameters.AddWithValue("@Ganancia", SqlDbType.Float).Value = nGanacia;
+                int numerador = Int32.Parse(ganancia.Text);
+                float result = numerador/100f;
+                cmd.Parameters.AddWithValue("@Ganancia", SqlDbType.Float).Value = result;
+                
             }
 
             cmd.ExecuteNonQuery();
 
             MessageBox.Show("Precios Actualizados.");
+            
             con.Close();
 
         }
@@ -62,6 +68,8 @@ namespace pruebaInterfaz
         {
 
             proveedores.Items.Clear();
+
+            dtProvParte.Clear();
            
             con.Open();
 
@@ -71,7 +79,7 @@ namespace pruebaInterfaz
 
             cmd.Parameters.AddWithValue("@NombreParte", SqlDbType.VarChar).Value = partes.Text;
 
-            DataTable dtProvParte = new DataTable();
+            
             dtProvParte.Load(cmd.ExecuteReader());
 
 

@@ -54,8 +54,6 @@ namespace pruebaInterfaz
             string idParte = dtParte.Rows[partes.SelectedIndex][0].ToString();
             string idProveedor = dtProveedor.Rows[proveedores.SelectedIndex][0].ToString();
 
-            int nGanacia = Int16.Parse(ganancia.Text)/100;
-
             SqlCommand cmd = new SqlCommand("SPIProveedorParte", con);
 
             cmd.CommandType = CommandType.StoredProcedure;
@@ -63,7 +61,7 @@ namespace pruebaInterfaz
             cmd.Parameters.AddWithValue("@idParte", SqlDbType.Int).Value = idParte;
             cmd.Parameters.AddWithValue("@idProveedor", SqlDbType.Int).Value = idProveedor;
             cmd.Parameters.AddWithValue("@Precio", SqlDbType.Float).Value = precio.Text;
-            cmd.Parameters.AddWithValue("@Ganancia", SqlDbType.Float).Value = nGanacia;
+            cmd.Parameters.AddWithValue("@Ganancia", SqlDbType.Float).Value = ganancia.Text;
             cmd.ExecuteNonQuery();
 
             MessageBox.Show("Parte asociada con exito!");

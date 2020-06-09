@@ -20,16 +20,13 @@ namespace pruebaInterfaz
         {
             con = new SqlConnection(datosConexion);
             InitializeComponent();
-            SqlDataAdapter sta = new SqlDataAdapter("SELECT * FROM Cliente", con);
+            SqlDataAdapter sta = new SqlDataAdapter("select Cedula, Nombre from Cliente where idEstado = 3", con);
 
             sta.Fill(dtClientes);
 
             for (int i = 0; i < dtClientes.Rows.Count; i++)
             {
-                if (dtClientes.Rows[i][3].ToString() == "3")
-                {
-                    cedulas.Items.Add(dtClientes.Rows[i][1].ToString());
-                }
+                cedulas.Items.Add(dtClientes.Rows[i][1].ToString());
 
             }
 

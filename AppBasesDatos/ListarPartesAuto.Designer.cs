@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.anno = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.modelo = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,31 +44,12 @@
             this.panel1.Size = new System.Drawing.Size(680, 10);
             this.panel1.TabIndex = 37;
             // 
-            // anno
-            // 
-            this.anno.BackColor = System.Drawing.Color.LightGreen;
-            this.anno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.anno.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.anno.Location = new System.Drawing.Point(101, 141);
-            this.anno.Name = "anno";
-            this.anno.Size = new System.Drawing.Size(170, 21);
-            this.anno.TabIndex = 36;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(58, 144);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 13);
-            this.label2.TabIndex = 35;
-            this.label2.Text = "Año";
-            // 
             // modelo
             // 
             this.modelo.BackColor = System.Drawing.Color.LightGreen;
             this.modelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.modelo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.modelo.Location = new System.Drawing.Point(101, 98);
+            this.modelo.Location = new System.Drawing.Point(101, 127);
             this.modelo.Name = "modelo";
             this.modelo.Size = new System.Drawing.Size(170, 21);
             this.modelo.TabIndex = 34;
@@ -90,11 +69,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 101);
+            this.label1.Location = new System.Drawing.Point(12, 130);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 32;
-            this.label1.Text = "Modelo";
+            this.label1.Text = "Modelo - Año";
             // 
             // panel2
             // 
@@ -121,8 +100,6 @@
             this.Controls.Add(this.listaPartes);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.anno);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.modelo);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -136,8 +113,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox anno;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox modelo;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;

@@ -57,6 +57,8 @@ namespace pruebaInterfaz
             //con.Open();
 
             detalleOrden.Items.Clear();
+            
+
 
             SqlCommand cmd = new SqlCommand("SPSDetalleOrden", con);
 
@@ -89,18 +91,22 @@ namespace pruebaInterfaz
                 linea = "";
             }
 
-            cmd = new SqlCommand("SPSFactura", con);
 
-            cmd.CommandType = CommandType.StoredProcedure;
+            if (dtDetalles.Rows.Count>0)
+            {
+                cmd = new SqlCommand("SPSFactura", con);
 
-            cmd.Parameters.AddWithValue("@idOrden", SqlDbType.Int).Value = idOrden;
+                cmd.CommandType = CommandType.StoredProcedure;
 
-            DataTable dtMonto = new DataTable();
+                cmd.Parameters.AddWithValue("@idOrden", SqlDbType.Int).Value = idOrden;
+                DataTable dtMonto = new DataTable();
 
-            dtMonto.Load(cmd.ExecuteReader());
+                dtMonto.Load(cmd.ExecuteReader());
 
-            monto.Text = dtMonto.Rows[0][0].ToString();
+                monto.Text = dtMonto.Rows[0][0].ToString();
 
+
+            }
 
             con.Close();
 
@@ -170,6 +176,7 @@ namespace pruebaInterfaz
             {
                 detalleOrden.Items.Clear();
                 detalleOrden.Items.Add("No existen ordenes registradas para este cliente");
+                monto.Text = "0";
             }
             con.Close();
 

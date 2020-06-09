@@ -39,7 +39,7 @@ namespace pruebaInterfaz
 
             for (int i = 0; i < dtAuto.Rows.Count; i++)
             {
-                auto.Items.Add(dtAuto.Rows[i][1].ToString());
+                auto.Items.Add(dtAuto.Rows[i][1].ToString()+" - "+ dtAuto.Rows[i][2].ToString());
             }
 
             auto.SelectedIndex = 0;
